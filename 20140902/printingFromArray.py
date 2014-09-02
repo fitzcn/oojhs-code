@@ -1,10 +1,10 @@
 """
 T. Swift's "Shake it Off" is the current number one song on iTunes
 The first part of the chorus is as follows: 
-	Players gonna play, play, play, play, play,
-	Heartbreakers gonna break, break, break, break, break
-	I'm just gonna shake, shake, shake, shake, shake
-	Shake it off, shake it Off
+	players gonna play play play play play
+	heartbreakers gonna break break break break break
+	I'm just gonna shake shake shake shake shake
+	shake it off shake it Off
 
 Part 1, concatenate string variables from the array list of words in the chorus from above
 (for example, chorusWords[0] will equal "gonna")
