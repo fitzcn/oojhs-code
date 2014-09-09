@@ -3,8 +3,8 @@ class Barbarian:
 
     def __init__(self, name):
         self.level = 1    
-        self.damage_per_second = 8     
-        self.hitpoints = 45
+        self.damage_per_second = 7     
+        self.hitpoints = 200
         self.name = name
 
     def dies(self):
@@ -17,7 +17,7 @@ class Archer:
     def __init__(self, name):
         self.level = 1
         self.damage_per_second = 7     
-        self.hitpoints = 20
+        self.hitpoints = 200
         self.name = name
 
     def dies(self):
@@ -30,16 +30,47 @@ def fight(attacker, defender):
 
 
 
-sara = Archer("Sara")
-bruce = Barbarian("Bruce")
+Sara = Archer("Sara")
+Bruce = Barbarian("Bruce")
 
 fightRound = 1
 
-while sara.hitpoints > 0 and bruce.hitpoints > 0:
+while Sara.hitpoints > 0 and Bruce.hitpoints > 0:
     print("Fight round: ", fightRound)
-    fight(bruce,sara)
+    print(Sara.hitpoints)
+    print(Bruce.hitpoints)
+    fight(Bruce,Sara)
     fightRound += 1
-    if sara.hitpoints <= 0:
-        sara.dies()
-    if bruce.hitpoints <= 0:
-        bruce.dies()
+    if Sara.hitpoints <= 0:
+        Sara.dies()
+    if Bruce.hitpoints <= 0:
+        Bruce.dies()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

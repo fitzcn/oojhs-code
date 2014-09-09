@@ -15,7 +15,7 @@ class Archer:
     def __init__(self, name):
         self.level = 1
         self.damage_per_second = 7     
-        self.hitpoints = 20
+        self.hitpoints = 80
         self.name = name
         self.dead = False
 
@@ -40,8 +40,8 @@ def fightToDeath(attacker, defender):
         if defender.hitpoints <= 0:
             defender.dies()
 
-olympianArmy = [Barbarian("Sara"), Barbarian("Bruce")]
-oracleArmy = [Archer("Sammy"), Archer("Bob")]
+olympianArmy = [Barbarian("Bruce"), Barbarian("Bran")]
+oracleArmy = [Archer("Sara"), Archer("Stephanie")]
 
 for i in range(0,len(oracleArmy)):
     fightToDeath(olympianArmy[i],oracleArmy[i])
@@ -53,3 +53,19 @@ for warrior in olympianArmy:
 for warrior in oracleArmy:
     print("Oracle Army status:")
     print(warrior.name + " dead? " + str(warrior.dead))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
