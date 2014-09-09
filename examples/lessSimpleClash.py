@@ -1,6 +1,4 @@
 class Barbarian:
-  #  hitpoints,attack,speed = 150,60,4
-
     def __init__(self, name):
         self.preferred_target = "any"
         self.attack_air = False
@@ -20,14 +18,14 @@ class Barbarian:
         self.laboratory_level = None
         self.research_time = None
         self.name = name
+        self.dead = False
 
     def dies(self):
         print(self.name + " has died.")
+        self.dead = True
         del self
 
 class Archer:
-#    hitpoints,attack,speed = 200,50,2
-
     def __init__(self, name):
         self.preferred_target = "any"
         self.attack_air = False
@@ -47,27 +45,39 @@ class Archer:
         self.laboratory_level = None
         self.research_time = None
         self.name = name
+        self.dead = False
 
     def dies(self):
         print(self.name + " has died.")
+        self.dead = True
         del self
 
 def fight(attacker, defender):
     defender.hitpoints = defender.hitpoints - attacker.damage_per_second
     attacker.hitpoints = attacker.hitpoints - defender.damage_per_second
 
+def fightToDeath(attacker, defender):
+    print("Fight to the death between " + attacker.name + " and " + defender.name)
+    fightRound = 1
+    while attacker.hitpoints > 0 and defender.hitpoints > 0:
+        print("Fight round: ", fightRound)
+        fight(attacker,defender)
+        fightRound += 1
+        if attacker.hitpoints <= 0:
+            attacker.dies()
+        if defender.hitpoints <= 0:
+            defender.dies()
 
+olympianArmy = [Barbarian("Sara"), Barbarian("Bruce")]
+oracleArmy = [Archer("Sammy"), Archer("Bob")]
 
-sara = Archer("Sara")
-bruce = Barbarian("Bruce")
+for i in range(0,len(oracleArmy)):
+    fightToDeath(olympianArmy[i],oracleArmy[i])
 
-fightRound = 1
+for warrior in olympianArmy:
+    print("Olypian Army status:")
+    print(warrior.name + " dead? " + str(warrior.dead))
 
-while sara.hitpoints > 0 and bruce.hitpoints > 0:
-    print("Fight round: ", fightRound)
-    fight(bruce,sara)
-    fightRound += 1
-    if sara.hitpoints <= 0:
-        sara.dies()
-    if bruce.hitpoints <= 0:
-        bruce.dies()
+for warrior in oracleArmy:
+    print("Oracle Army status:")
+    print(warrior.name + " dead? " + str(warrior.dead))
