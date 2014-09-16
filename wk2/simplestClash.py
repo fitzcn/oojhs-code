@@ -4,7 +4,7 @@ class Barbarian:
     def __init__(self, name):
         self.level = 1    
         self.damage_per_second = 7     
-        self.hitpoints = 200
+        self.hitpoints = 45
         self.name = name
 
     def dies(self):
@@ -17,7 +17,7 @@ class Archer:
     def __init__(self, name):
         self.level = 1
         self.damage_per_second = 7     
-        self.hitpoints = 200
+        self.hitpoints = 45
         self.name = name
 
     def dies(self):
